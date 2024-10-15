@@ -1,0 +1,3 @@
+const ACCESS_TOKEN_EXPIRED = 1000 * 60 * 4;
+
+export { ACCESS_TOKEN_EXPIRED };
