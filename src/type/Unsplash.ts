@@ -1,4 +1,4 @@
-export interface User {
+export type User = {
   id: string;
   username: string;
   name: string;
@@ -7,14 +7,14 @@ export interface User {
     medium: string;
     large: string;
   };
-}
+};
 
-export interface Sponsorship {
+export type Sponsorship = {
   tagline: string;
   sponsor: User;
-}
+};
 
-export interface UnsplashImage {
+export type UnsplashImage = {
   id: string;
   alt_description: string | null;
   urls: {
@@ -27,10 +27,10 @@ export interface UnsplashImage {
   user: User;
   likes: number;
   sponsorship?: Sponsorship | null;
-}
+};
 
-export interface UnsplashResponse {
+export type UnsplashResponse = {
   data: UnsplashImage[];
   total: number;
   total_pages: number;
-}
+};

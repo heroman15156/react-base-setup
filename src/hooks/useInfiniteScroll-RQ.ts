@@ -5,11 +5,11 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { UnsplashImage } from "../type/Unsplash.ts";
 
-interface PageData {
+type PageData = {
   images: UnsplashImage[];
   total: number;
   totalPages: number;
-}
+};
 
 type TQueryFnData = PageData;
 type TError = Error;

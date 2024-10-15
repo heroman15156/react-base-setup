@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./BaseInfiniteScroll.module.css";
 import { UnsplashImage } from "../../type/Unsplash";
 
-interface UnsplashCardProps {
+type UnsplashCardProps = {
   image: UnsplashImage;
   key: string;
-}
+};
 
 const UnsplashCard = React.forwardRef<HTMLDivElement, UnsplashCardProps>(
   ({ image }, ref) => {
