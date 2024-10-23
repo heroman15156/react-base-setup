@@ -1,17 +1,25 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { routes } from "../constants/routes.tsx";
+import useAuth from "../hooks/queries/auth/useAuth.ts";
 
 export default function Header() {
+  const { logoutMutation, isLogin } = useAuth();
+  const navigate = useNavigate();
+  const onLogout = () => {
+    logoutMutation.mutate();
+  };
+
+  const onNavigateToLogin = () => {
+    navigate(routes.LOGIN);
+  };
+
   return (
     <header>
-      <nav style={{ display: "flex" }}>
-        <li>
-          <Link to={routes.POST}>posts</Link>
-        </li>
-        <li>
-          <Link to={routes.LOGIN}>login</Link>
-        </li>
-      </nav>
+      {isLogin ? (
+        <button onClick={onLogout}>로그아웃</button>
+      ) : (
+        <button onClick={onNavigateToLogin}>로그인</button>
+      )}
     </header>
   );
 }

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { postQueryKey } from "../../constants/queryKeys.ts";
-import { getPosts } from "../../servies/postService.ts";
+import { postQueryKey } from "../../../constants/queryKeys.ts";
+import { getPosts } from "../../../servies/postService.ts";
 
 const usePosts = () => {
   return useQuery({

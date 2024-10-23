@@ -1,11 +1,10 @@
-import { GoogleUserInfo } from "../type/User.ts";
 import { create } from "zustand";
 
 type AuthState = {
   accessToken: string | null;
-  user: GoogleUserInfo | null;
+  user: any | null;
   setAccessToken: (token: string | null) => void;
-  setUser: (user: GoogleUserInfo | null) => void;
+  setUser: (user: any | null) => void;
 };
 
 const useAuthStore = create<AuthState>((set) => ({

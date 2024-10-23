@@ -1,4 +1,7 @@
-import { createQueryKeys } from "@lukemorales/query-key-factory";
+import {
+  createQueryKeys,
+  createQueryKeyStore,
+} from "@lukemorales/query-key-factory";
 
 const authQueryKeys = createQueryKeys("auth", {
   profile: null,
@@ -17,4 +20,25 @@ const postQueryKey = createQueryKeys("post", {
   list: null,
 });
 
-export { unsplashQueryKey, randomQueryKey, postQueryKey, authQueryKeys };
+const queryKeys = createQueryKeyStore({
+  posts: {
+    list: null,
+    detail: (id: number) => [id],
+    comments: (id: number) => [id],
+  },
+  comments: {
+    list: (postId: number | null) => [{ postId }],
+  },
+  users: {
+    list: null,
+    detail: (id: number) => [id],
+  },
+});
+
+export {
+  unsplashQueryKey,
+  randomQueryKey,
+  postQueryKey,
+  authQueryKeys,
+  queryKeys,
+};

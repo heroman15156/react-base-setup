@@ -1,7 +1,7 @@
 // localStorage
 export const TOKEN = "token";
 export const ACCESS_TOKEN = "accessToken";
-export const REFRESH_TOKEN = "refreshToken";
+export const REFRESH_TOKEN = "refresh_token";
 export const setToken = (token: string) => {
   localStorage.setItem(TOKEN, token);
 };
